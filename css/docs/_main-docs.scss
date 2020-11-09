@@ -1,0 +1,69 @@
+.docs-main {
+
+    .container {
+        @include container;
+    }
+
+    .grid {
+        @include grid;
+        grid-template-columns: 1fr 2fr;
+        align-items: flex-start;
+
+        h3 {
+            margin: 20px 0;
+        }
+
+        .card {
+            @include card;
+
+            nav {
+
+                li {
+                    font-size: 17px;
+                    padding-bottom: 5px;
+                    margin-bottom: 5px;
+                    border-bottom: 1px solid #ccc;
+
+                    .active {
+                        color: $mainColor;
+                    }
+
+                    a {
+                        color: #333;
+
+                        &:hover {
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+//----------------------------------------------------------------------------------------------------
+
+
+// Tablets and under
+@media (max-width: 768px) {
+    
+}
+//----------------------------------------------------------------------------------------------------
+
+
+// Mobile
+@media (max-width: 500px) {
+    .docs-main {
+
+        .grid {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+            text-align: center;
+
+            img {
+                justify-self: center;
+            }
+            
+        }
+    }
+}
+//----------------------------------------------------------------------------------------------------

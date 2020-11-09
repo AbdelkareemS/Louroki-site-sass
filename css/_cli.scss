@@ -1,0 +1,48 @@
+.cli {
+
+    .container {
+        @include container;
+    }
+    
+    .grid {
+
+        .card {
+            @include card;
+        }
+
+        @include grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+
+        >:first-child {
+            grid-column: 1 / span 2;
+            grid-row: 1 / span 2;
+        }
+    }
+}
+//----------------------------------------------------------------------------------------------------
+
+
+// Tablets and under
+@media (max-width: 768px) {
+    
+}
+//----------------------------------------------------------------------------------------------------
+
+
+// Mobile
+@media (max-width: 500px) {
+    .cli {
+
+        .grid {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+
+            >:first-child {
+                grid-column: 1;
+                grid-row: 1;
+            }
+        }
+    }
+}
+//----------------------------------------------------------------------------------------------------

@@ -1,0 +1,129 @@
+// Variables
+$mainFont: 'lato';
+$mainColor: #047aed;
+$secondaryColor: #1c3fa8;
+$darkColor: #002240;
+$lightColor: #f4f4f4;
+$successColor: #5cb85c;
+$errorColor: #d9534f;
+//-------------------------------------------------------------------------------------------------
+
+
+// Mixins & Functions
+@mixin container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+    overflow: auto;
+}
+
+@mixin flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+@mixin grid {
+    display: grid;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+@mixin card {
+    background-color: #fff;
+    color: #333;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin: 10px;
+    z-index: 100;
+}
+//-------------------------------------------------------------------------------------------------
+
+
+// Imports
+@import './utilities';
+@import './navbar';
+@import './hero';
+@import './stats';
+@import './cli';
+@import './cloud';
+@import './languages';
+@import './footer';
+@import './features/head';
+@import './features/sub-head';
+@import './features/main-features';
+@import './docs/head';
+@import './docs/main-docs';
+@import './animation/animation';
+
+//-------------------------------------------------------------------------------------------------
+
+
+// Resets
+* {
+    font-family: $mainFont;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    color: #333;
+    line-height: 1.6;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1,
+h2 {
+    font-weight: 300;
+    line-height: 1.2;
+    margin: 10px 0;
+}
+
+p {
+    margin: 10px 0;
+}
+
+img {
+    width: 100%;
+}
+
+code, pre {
+    background: #333;
+    color: #fff;
+    padding: 10px;
+}
+//----------------------------------------------------------------------------------------------------
+
+
+// Tablets and under
+@media (max-width: 768px) {
+    .grid {
+        @include grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+}
+//----------------------------------------------------------------------------------------------------
+
+
+// Mobile
+@media (max-width: 500px) {
+    
+}
+//----------------------------------------------------------------------------------------------------

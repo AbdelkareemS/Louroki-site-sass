@@ -1,0 +1,115 @@
+.hero {
+    height: 400px;
+    background-color: $mainColor;
+    color: #fff;
+    position: relative;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        background-color: #fff;
+        height: 100px;
+        right: 0;
+        left: 0;
+        bottom: -50px;
+        transform: skewY(-3deg);
+        -webkit-transform: skewY(-3deg);
+        -moz-transform: skewY(-3deg);
+        -ms-transform: skewY(-3deg);
+    }
+
+    .grid {
+        @include grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .container {
+        @include container;
+        overflow: visible;
+
+        .hero-text {
+            animation: slideInfromLeft 1s ease-in;
+        }
+
+        h1 {
+            font-size: 40px;
+        }
+
+        p {
+            margin: 20px 0;
+        }
+
+        .hero-form {
+            position: relative;
+            top: 60px;
+            height: 350px;
+            width: 400px;
+            padding: 40px;
+            justify-self: flex-end;
+            animation: fadeIn 1s ease-in;
+
+            .form-control {
+                margin: 30px 0;
+
+                input[type='text'],
+                input[type='email'] {
+                    border: 0;
+                    border-bottom: 1px solid #b4becb;
+                    width: 100%;
+                    padding: 3px;
+                    font-size: 16px;
+                    outline: none;
+                }
+            }
+        }
+
+        .card {
+            @include card;
+        }
+    }
+}
+//----------------------------------------------------------------------------------------------------
+
+
+// Tablets and under
+@media (max-width: 768px) {
+    .hero {
+        height: auto;
+        .grid {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+        }
+
+        .container {
+
+           .hero-text {
+               text-align: center;
+               margin-top: 40px;
+           }
+
+            .hero-form {
+                justify-self: center;
+                margin: auto;
+            }
+        }
+    }
+}
+//----------------------------------------------------------------------------------------------------
+
+
+// Mobile
+@media (max-width: 500px) {
+    .hero {
+
+        .container {
+
+            .hero-form {
+                justify-self: center;
+                margin: auto;
+                width: 100%;
+            }
+        }
+    }
+}
+//----------------------------------------------------------------------------------------------------

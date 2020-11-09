@@ -1,0 +1,48 @@
+.stats {
+    padding-top: 100px;
+    animation: slideInfromBottom 1s ease-in;
+
+    .container {
+        @include container;
+    }
+
+    .stats-heading {
+        max-width: 500px;
+        margin: auto;
+    }
+
+    .grid {
+        @include grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        h3 {
+            font-size: 35px;
+        }
+
+        p {
+            font-size: 20px;
+            font-weight: bold;
+        }
+    }
+}
+//----------------------------------------------------------------------------------------------------
+
+
+// Tablets and under
+@media (max-width: 768px) {
+    
+}
+//----------------------------------------------------------------------------------------------------
+
+
+// Mobile
+@media (max-width: 500px) {
+    .stats {
+        // height: auto;
+        .grid {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+        }
+    }
+}
+//----------------------------------------------------------------------------------------------------

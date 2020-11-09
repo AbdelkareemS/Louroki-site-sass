@@ -1,0 +1,45 @@
+.features-head {
+
+    .container {
+        @include container;
+    }
+
+    .grid {
+        @include grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        img {
+            width: 200px;
+            justify-self: flex-end;
+        }
+    }
+}
+//----------------------------------------------------------------------------------------------------
+
+
+// Tablets and under
+@media (max-width: 768px) {
+    
+}
+//----------------------------------------------------------------------------------------------------
+
+
+// Mobile
+@media (max-width: 500px) {
+    .features-head {
+
+        .grid {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+            
+            p {
+                text-align: center;
+            }
+
+            img {
+                justify-self: center;
+            }
+        }
+    }
+}
+//----------------------------------------------------------------------------------------------------

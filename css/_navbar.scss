@@ -1,0 +1,56 @@
+.navbar {
+    background-color: $mainColor;
+    color: #ffffff;
+    height: 70px;
+
+    .container {
+        @include container;
+        overflow: visible;
+    }
+
+    .flex {
+        @include flex;
+    }
+
+    ul {
+        display: flex;
+
+        a {
+            color: #fff;
+            padding: 10px;
+            margin: 0 5px;
+
+            &:hover {
+                border-bottom: 2px #fff solid;
+            }
+        }
+    }
+}
+//----------------------------------------------------------------------------------------------------
+
+
+// Tablets and under
+@media (max-width: 768px) {
+    
+}
+//----------------------------------------------------------------------------------------------------
+
+
+// Mobile
+@media (max-width: 500px) {
+    .navbar {
+        height: 110px;
+
+        .flex {
+            @include flex;
+            flex-direction: column;
+        }
+
+        ul {
+            padding: 10px;
+            background: rgba(0,0,0,0.1);
+            flex-direction: row !important;
+        }
+    }
+}
+//----------------------------------------------------------------------------------------------------
